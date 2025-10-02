@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/AmountFragment">
+
+    <fragment
+        android:id="@+id/AmountFragment"
+        android:name="kaa.nurlibaydev.paymentterminaltesttask.presentation.ui.amount.AmountFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_amount">
+        <action
+            android:id="@+id/action_AmountFragment_to_cardSimulationFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ResultFragment"
+        android:name="kaa.nurlibaydev.paymentterminaltesttask.presentation.ui.result.ResultFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="transaction"
+            app:argType="kaa.nurlibaydev.paymentterminaltesttask.data.entity.TransactionEntity" />
+        <action
+            android:id="@+id/action_ResultFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="kaa.nurlibaydev.paymentterminaltesttask.presentation.ui.transaction.TransactionFragment"
+        android:label="CardSimulationFragment"
+        tools:layout="@layout/fragment_transaction">
+        <action
+            android:id="@+id/action_cardSimulationFragment_to_ResultFragment"
+            app:destination="@id/ResultFragment" />
+        <argument
+            android:name="amount"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="kaa.nurlibaydev.paymentterminaltesttask.presentation.ui.history.HistoryFragment"
+        android:label="HistoryFragment"
+        tools:layout="@layout/fragment_history" />
+</navigation>

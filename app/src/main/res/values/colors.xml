@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="teal_700">#00796B</color>
+    <color name="color_primary">#118874</color>
+    <color name="color_border">#fffffe</color>
+    <color name="color_white_30">#4DFFFFFF</color>
+    <color name="color_error">#334048</color>
+
+    <color name="input_border_default">#BDBDBD</color> <!-- light gray -->
+    <color name="input_border_focused">#00796B</color> <!-- teal_700 -->
+    <color name="input_background">#FFFFFFFF</color>
+    <color name="input_error">#D32F2F</color>
+    <color name="input_text">#757575</color>
+    <color name="input_hint">#757575</color>
+
+    <color name="gray_light">#D6D6D6</color>
+    <color name="gray">#9E9E9E</color>
+</resources>

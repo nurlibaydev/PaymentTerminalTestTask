@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PaymentTerminalTestTask</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="lbl_pay">Оплатить</string>
+    <string name="lbl_enter_amount">Введите сумму</string>
+    <string name="lbl_error">Ошибка</string>
+    <string name="lbl_card_reading_is_simulated">Имитируется считывание карты...</string>
+    <string name="lbl_into_history">В историю</string>
+    <string name="lbl_transaction_history">История транзакций</string>
+    <string name="lbl_clear">Очистить</string>
+</resources>
