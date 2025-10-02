@@ -14,6 +14,17 @@ import kaa.nurlibaydev.paymentterminaltesttask.databinding.ItemHistoryBinding;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder> {
 
+    private static HistoryAdapter instance;
+
+    private HistoryAdapter() {}
+
+    public static synchronized HistoryAdapter getInstance() {
+        if (instance == null) {
+            instance = new HistoryAdapter();
+        }
+        return instance;
+    }
+
     private final List<TransactionEntity> transactions = new ArrayList<>();
     private OnItemClickListener listener;
 

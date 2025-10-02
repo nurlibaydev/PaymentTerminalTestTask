@@ -18,7 +18,7 @@ import kaa.nurlibaydev.paymentterminaltesttask.presentation.utils.ToastUtils;
 public class HistoryFragment extends Fragment {
 
     private FragmentHistoryBinding binding;
-    private HistoryAdapter adapter;
+    private final HistoryAdapter adapter = HistoryAdapter.getInstance();
     private TransactionViewModel viewModel;
 
     @Override
@@ -32,13 +32,10 @@ public class HistoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        adapter = new HistoryAdapter();
-        binding.rvHistory.setLayoutManager(new LinearLayoutManager(requireContext()));
-        binding.rvHistory.setAdapter(adapter);
-
         viewModel = new ViewModelProvider(this).get(TransactionViewModel.class);
-        viewModel.getAllTransactions();
+        setupAdapter();
         setupObservers();
+        viewModel.getAllTransactions();
 
         adapter.setOnItemClickListener(transaction -> { });
         binding.btnClear.setOnClickListener(v -> {
@@ -48,6 +45,11 @@ public class HistoryFragment extends Fragment {
             binding.rvHistory.setVisibility(View.GONE);
             viewModel.clearTransactions();
         });
+    }
+
+    private void setupAdapter() {
+        binding.rvHistory.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.rvHistory.setAdapter(adapter);
     }
 
     private void setupObservers() {
